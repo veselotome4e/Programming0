@@ -1,6 +1,6 @@
 a = int(input("Enter a:" ))
 b = int(input("Enter b:" ))
-x = int(input("Enter b:" ))
+x = int(input("Enter x:" ))
 
 if x == a:
     print("The number is equal to the lower bound of the interval")
@@ -11,4 +11,4 @@ elif a < x and x < b:
 elif x < a:
     print("The number is outside the interval, %d < %d" %(x,a))
 elif x > b:
-    print("The number is outside the interval, %d < %d" %(x,b)) 
+    print("The number is outside the interval, %d > %d" %(x,b)) 
