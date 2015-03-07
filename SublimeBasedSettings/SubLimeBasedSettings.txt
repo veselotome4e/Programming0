@@ -1,0 +1,8 @@
+{
+	"font_size": 22,  //font_size
+	"highlight_line": true, //da ni highlitne reda v koito sme 
+	"draw_white_space": "all", //da ni pokaje tochkite
+	"translate_tabs_to_spaces": "all", //nashite tabove da stanat space
+	"tab_size": 4,
+}
+
