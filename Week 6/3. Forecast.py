@@ -9,12 +9,8 @@ def forecast(days):
     for each in days:
         events[each] += 1
 
-    #get the values
-    values = []
-    for each in events:
-        values.append(events[each])
- 
-    values = sorted(values)
+    values = sorted(list(events[key] for key in events))
+   
     if(values[0] == values[1] and values[1] == values[2]):
         return days[len(days)-1]
 

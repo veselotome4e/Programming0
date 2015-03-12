@@ -25,7 +25,17 @@ def tail(items):
 #print(tail(["Python"]))
 
 def equal_lists(listA, listB):
-    return listA == listB
+    #return listA == listB
+    if len(listA != listB):
+        return False
+
+    for each in range(0, len(listA)):
+        listA_element  = listA[each]
+        listB_element = listB_element[each]
+        if listA_element != listB_element:
+            return False
+
+    return True
 
 #print(equal_lists([1, 2], [1, 2]))
 #print(equal_lists([1, 2], [2, 1]))
@@ -44,16 +54,35 @@ def count_items(n, items):
 #print(count_items(False, [True, True]))
 
 def take(n, items):
-    return items[0:n]
+    #return items[0:n]
+    if n >= len(items):
+        return items
+
+    l = []
+    for each in range(0, n):
+        l.append(items[each])
+
+    return l
 
 #print(take(2, [1, 2, 3, 4, 5]))
 #print(take(3, [3, 4, 5, 6, 7, 8]))
 #print(take(10, [1]))
-def drop(n, items):
-    return items[n:]
 
+def drop(n, items):
+    #return items[n:]
+    if n >= len(items):
+        return []
+
+    l = []
+    for each in range(n, len(items)):
+        l.append(items[each])
+
+    return l
+
+#print(drop(1, [1, 2, 3]))
 #print(drop(2, ["Python", "Ruby", "Django", "Rails"]))
 #print(drop(10, [1]))
+
 def reverse(items):
     l = []
     n = len(items)

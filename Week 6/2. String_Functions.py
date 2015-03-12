@@ -25,11 +25,9 @@ def join(delimiter, items):
             combination = str(items[each_index]) + delimiter
         s += combination
 
-
     return s
 
 #print(join(" ", ["Radoslav", "Yordanov", "Georgiev"]))
-#print(join("PP", ["line1", "line2"]))
 #print(join("\n", ["line1", "line2"]))
 
 def startswith(search, string):
@@ -46,7 +44,7 @@ def startswith(search, string):
 
 def endswith(search, string):
 
-    search_reversed = reverse(searssch)
+    search_reversed = reverse(search)
     search_string = reverse(string)
 
     return startswith(search_reversed, search_string)
@@ -59,22 +57,31 @@ def endswith(search, string):
 
 def trim(string):
 
-    l = []
-    for each_char in string:
-        l.append(each_char)
+    n = len(string)
+    white_space = " "
+    s = ""
 
-    n = len(l)
-    for each_index in range(1, n-1):
-        if l[each_index] == " ":
-            #check the neighbours
-            if l[each_index-1] == " " and l[each_index+1] == " ":
-                del(l[each_index])
-             
-    print(l)
+    for each in range(0, n):
+        if string[each] == white_space and each + 1 < n and string[each+1] == white_space:
+                current_index = each
+                while string[current_index] == white_space:
+                    current_index +=1 
+                    if current_index < n:
+                        break
+        else:
+            s += string[each]
+
+    if  len(s) > 1 and s[0] == white_space:
+        s = s[1:]
+
+    if  len(s) > 0 and s[len(s)-1] == white_space:
+        s = s[:len(s)-1]
+
+    return "The trim new string: {}".format(s) +  " Length: " + str(len(s))
 
 
-#print(trim("   asda   "))
-#print(trim(" spacious    "))
+print(trim("   asda   "))
+print(trim(" spacious    "))
 print(trim("no here but yes at end   "))
-#print(trim("                      "))
-#print(trim("python"))
+print(trim("                      "))
+print(trim("python"))
