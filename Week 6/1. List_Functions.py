@@ -11,7 +11,15 @@ def last(items):
 #print(last(["Python"]))
 
 def tail(items):
-    return items[1:]
+    #return items[1:]
+    start = 1
+    end = len(items)
+    l = []
+
+    for each_index in range(1, end):
+        l += [items[each_index]]
+
+    return l
 
 #print(tail([1, 2, 3]))
 #print(tail(["Python"]))
@@ -55,7 +63,7 @@ def reverse(items):
 
     return l
 
-print(reverse(["Speak", "in", "reverse", "you", "must!"]))
-print(reverse([1, 2, 3]))
-print(reverse([]))
+#print(reverse(["Speak", "in", "reverse", "you", "must!"]))
+#print(reverse([1, 2, 3]))
+#print(reverse([]))
  
